@@ -17,12 +17,12 @@ class UserAdminSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'name' => 'Admin',
-                'email' => 'joao.silva@example.com',
-                'password' => Hash::make('password123'),
+                'email' => 'Admin1@admin',
+                'password' => Hash::make('admin1'),
                 'telefone' => '(13) 98765-4321',
                 'Nascimento' => '1990-01-15',
                 'imagem_url' => 'https://f.i.uol.com.br/fotografia/2018/01/18/15163126835a61186beddfd_1516312683_3x2_md.jpg',
-                'endereco_id' => 1, 
+                'endereco_id' => 2, 
                 'classificacao_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now(),

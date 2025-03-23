@@ -29,7 +29,7 @@
 
 <div class="bg-slate-100 text-justify p-7 m-6 shadow-xl rounded-lg  mx-auto w-screen">
     <div class="mb-6">
-        <h1 class="font-semibold text-2xl tracking-wide text-center text-sky-600"> Lista de Serviços</h1>
+        <h1 class="font-semibold text-3xl tracking-wide text-center text-sky-600"> Lista de Serviços</h1>
     </div>
 
     <div>

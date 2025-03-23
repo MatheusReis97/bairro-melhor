@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('pattern.header')
 
-        <title>Bairro Melhor - Acesso </title>
-        @vite('resources/css/app.css')
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+@section('titulo', 'Bairro Melhor - Login')
 
-
-    </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50 from-red-500 to-slate-50 bg-gradient-to-l">
-
+@section('conteudo')
 <nav class="bg-sky-950 text-white">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
         <!-- Links da Navbar -->
@@ -28,7 +17,7 @@
             <a href="{{route('cadastrar')}}" class="bg-sky-500 hover:bg-sky-600 text-white rounded-md px-4 py-2 transition-transform duration-300 transform hover:scale-105">Cadastrar</a>
         </div>
     </div>
-    </nav>
+</nav>
 
 <div class="min-h-screen flex flex-col md:flex-row items-center justify-center">
     <!-- Seção da Imagem ao lado do formulário -->
@@ -37,9 +26,9 @@
     </div>
 
     <!-- Formulário de Login ao lado da imagem -->
-    <div class="bg-slate-100 text-justify p-6 m-4 shadow-xl rounded-lg   flex-1">
+    <div class="bg-slate-100 text-justify p-6 m-4 shadow-x1 rounded-lg   flex-1 ">
         <div class="mb-6">
-            <h1 class="font-semibold text-2xl tracking-wide text-center text-sky-700">Entrar no Bairro Melhor</h1>
+            <h1 class="font-semibold text-3xl tracking-wide text-center text-sky-700">Entrar no Bairro Melhor</h1>
         </div>
 
         <form action="{{route('Login')}}" method="post" class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg space-y-4">
@@ -56,13 +45,13 @@
 
             <!-- Exibe mensagens de erro -->
             @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul class="text-red-600">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+            <div class="alert alert-danger">
+                <ul class="text-red-600">
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
             @endif
 
             <div class="flex justify-center">
@@ -72,16 +61,6 @@
             <a href="">Esqueci a senha !</a>
         </form>
         <br>
-       
+
     </div>
 </div>
-
-<!-- Footer -->
-<footer class="bg-slate-800 text-white py-4 mt-auto">
-    <div class="container mx-auto text-center">
-        <p class="text-sm">
-            &copy; {{ date('Y') }} | Matheus Reis
-        </p>
-    </div>
-</footer>
-

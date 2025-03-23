@@ -19,7 +19,7 @@ class BairroSeeder extends Seeder
             ['bairro' => 'Vila Paulista', 'cidade_id' => 5],
             ['bairro' => 'Centro', 'cidade_id' => 5],
             ['bairro' => 'Jardim Casqueiro', 'cidade_id' => 5],
-            ['bairro' => 'Ilha Caraguatá', 'cidade_id' => 5],
+            ['bairro' => 'Vila Caraguatá', 'cidade_id' => 5],
         ]);
     }
 }
