@@ -40,4 +40,8 @@ public function logout(Request $request)
         $request->session()->regenerateToken();
         return redirect('/login');
     }
+
+public function AreaDeAcesso(){
+    return view ('login');
+}
 }

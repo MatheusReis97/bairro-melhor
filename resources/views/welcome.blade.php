@@ -25,7 +25,7 @@
         <!-- Botões de Ação -->
         <div class="flex gap-4">
             <a href="{{route('cadastrar')}}" class="bg-sky-500 hover:bg-sky-600 text-white rounded-md px-4 py-2 transition-transform duration-300 transform hover:scale-105">Cadastrar</a>
-            <a href="{{route('logar')}}" class="bg-sky-500 hover:bg-sky-600 text-white rounded-md px-4 py-2 transition-transform duration-300 transform hover:scale-105">Acessar</a>
+            <a href="{{route('login')}}" class="bg-sky-500 hover:bg-sky-600 text-white rounded-md px-4 py-2 transition-transform duration-300 transform hover:scale-105">Acessar</a>
         </div>
     </div>
     </nav>

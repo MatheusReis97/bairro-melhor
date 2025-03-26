@@ -22,7 +22,7 @@ class UserAdminSeeder extends Seeder
                 'telefone' => '(13) 98765-4321',
                 'Nascimento' => '1990-01-15',
                 'imagem_url' => 'https://f.i.uol.com.br/fotografia/2018/01/18/15163126835a61186beddfd_1516312683_3x2_md.jpg',
-                'endereco_id' => 2, 
+                'endereco_id' => 1, 
                 'classificacao_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now(),

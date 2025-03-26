@@ -21,7 +21,7 @@ Route::get('/cadastrar', function(){
 Route::post('/cadastrar', [CadastroController::class, 'cadastrar'])->name('cadastrando');
 
 
-Route::get('/login', function(){ return view('login');})->name('logar');
+Route::get('/login', [LoginController::class, 'AreaDeAcesso'])->name('login');
 
 Route::post('/login', [LoginController::class, 'login'])->name('Login');
 

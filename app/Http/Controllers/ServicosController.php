@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Endereco;
 use Illuminate\Http\Request;
 use App\Models\Servico;
@@ -45,7 +46,7 @@ class ServicosController extends Controller
         $validador = $request->validate([
             'desc' => 'required|string|max:300',
             'tipo' => 'required', 
-            'data' => 'nullable|datetime',
+            'data' => 'nullable',
             'Endereco'=>'required', 
         ]);
 
@@ -54,6 +55,7 @@ class ServicosController extends Controller
         $servico = Servico::create([
        'Descricao_servico' => $validador['desc'],
         'data_criacao' => $validador['data']?? now(),
+        'data_conclusao' => Carbon::now()->addDays(30),
         'endereco_id' => $validador['Endereco'],
         'tp_servico_id'=> $validador['tipo'],
         'users_id' => $usuario->id,

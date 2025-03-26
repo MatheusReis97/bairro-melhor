@@ -15,7 +15,7 @@ class HomeController extends Controller
 
      $usuarios = User::all();
     
-     // Retorna para a view com os usuários
+     
     return view('connected.home', compact('servicos', 'usuarios'));
 
     }
