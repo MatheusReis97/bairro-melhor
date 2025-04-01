@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Classificacao;
-
+use Termwind\Components\BreakLine;
 
 class UsuarioController extends Controller
 
 {
     public function apresentacao(){
 
-            $usuarios=User::all();
+            $usuarios=User::OrderBy('id','desc')->paginate(20);
+  
 
             return view('connected.usuarios',compact('usuarios'));
     }
@@ -103,4 +104,36 @@ $user->delete();
 // Redireciona com mensagem de sucesso
 return redirect()->route('home')->with('success', 'Serviço deletado com sucesso!');
 }
+
+
+public function BuscarUsuario(Request $request){
+
+    $buscarUsuario = $request->input('buscar');
+    $ValorSelecao = $request->input('selecao');
+
+    $usuarios = User::query();
+
+    switch($ValorSelecao){
+        case 'name':
+            $usuarios->where('name', 'LIKE', "%$buscarUsuario%");
+            break;
+        case 'email':
+            $usuarios->where('email', 'LIKE', "%$buscarUsuario%");
+            break;
+        case 'telefone':
+            $usuarios->where('telefone', 'LIKE', "%$buscarUsuario%");
+            break;
+        case 'Nascimento':
+            $usuarios->where('Nascimento', 'LIKE', "%$buscarUsuario%");
+            break;
+        default:
+            $usuarios->orderBy('created_at', 'desc');
+         }
+
+
+         $usuarios = $usuarios->paginate(10)->appends($request->query());;
+
+         return view('connected.usuarios',compact('usuarios'));
+}
+
 }

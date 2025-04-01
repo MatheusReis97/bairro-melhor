@@ -54,7 +54,8 @@ Route::get('/servico/{id}',['\App\Http\Controllers\ServicosController','visualiz
 Route::get('/servico/editar/{id}',['\App\Http\Controllers\ServicosController','editar'])->name('servico.editar');
 Route::put('/servico/editar/{id}',['\App\Http\Controllers\ServicosController','update'])->name('servico.update');
 Route::delete('/servico/{id}',['\App\Http\Controllers\ServicosController','destroy'])->name('servico.destroy');
-
+Route::get('/servicos/ordenado',['\App\Http\Controllers\ServicosController','ordenar'])->name('ordenar.servico');
+Route::get('/servicos/Meuservicos',['\App\Http\Controllers\ServicosController','MeuServicos'])->name('MeuServicos.servico');
 
 
 // USUARIOS
@@ -63,5 +64,6 @@ Route::get('/usuario/visualizar/{id}',[UsuarioController::class,'visualizar'])->
 Route::get('/usuario/editar/{id}',[UsuarioController::class,'editar'])->name('usuario.editar');
 Route::put('/usuario/editar/{id}',[UsuarioController::class,'update'])->name('usuario.update');
 Route::delete('/usuario/{id}',[UsuarioController::class,'deletar'])->name('usuario.deletar');
+Route::get('/usuarios/busca',[UsuarioController::class, 'BuscarUsuario'])->name('usuario.busca');
 
 });

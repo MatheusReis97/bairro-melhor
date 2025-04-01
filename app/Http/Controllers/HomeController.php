@@ -11,7 +11,7 @@ class HomeController extends Controller
 
     public function servicos(){
 
-     $servicos = Servico::all();
+     $servicos = Servico::orderBy('created_at','desc')->get();
 
      $usuarios = User::all();
     

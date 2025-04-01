@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Servico;
 use App\Models\TpServico;
 use app\Models\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Contracts\Service\Attribute\Required;
 
@@ -16,7 +17,7 @@ class ServicosController extends Controller
     
     public function servicos(){
 
-        $servicos = Servico::all();
+        $servicos = Servico::paginate(15);
        
         // Retorna para a view com os usuários
        return view('connected.servicos', compact('servicos'));
@@ -151,4 +152,42 @@ class ServicosController extends Controller
     // Redireciona com mensagem de sucesso
     return redirect()->route('servicos')->with('success', 'Serviço deletado com sucesso!');
 }
+
+
+public function ordenar(Request $request)
+{
+    $escolha = $request->input('ordenacao','recentes');
+
+    $filtroStatus = $request->input('status','');
+
+    $servicos =Servico::query();
+
+    if(!empty($filtroStatus)){
+        $servicos->where('Status', $filtroStatus);
+    }
+
+
+    switch ($escolha) {
+        case 'antigos':
+            $servicos->orderBy('created_at', 'asc');
+            break;
+        default:
+            $servicos->orderBy('created_at', 'desc'); // Padrão: Mais recentes
+    }
+
+    $servicos = $servicos->paginate(10)->appends($request->query());; // Mantém paginação
+
+    return view('connected.servicos', compact('servicos'));
+
+}
+
+public function MeuServicos(Session $session){
+
+   $Idusuario =auth()->id();
+   $servicos = Servico::where('users_id', $Idusuario)->paginate(10);
+
+   return view('connected.servicos', compact('servicos'));
+
+}
+
  }

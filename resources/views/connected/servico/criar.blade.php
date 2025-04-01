@@ -6,26 +6,7 @@
 
 @section('content')
 
-<nav class="bg-sky-950 text-white">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-
-        <div class="flex gap-8">
-            <img class="shadow-md rounded-full box-border h-14 w-14 p-2" src="{{asset('img/bairro-melhor-logo.png')}}" alt="logo-Bairro-Melhor">
-        </div>
-
-        <div class="flex gap-4 mt-2">
-            <a href="{{route ('perfil')}}"><button class="bg-sky-500 hover:bg-sky-600 text-white rounded-md px-4 py-2 transition-transform duration-300 transform hover:scale-105">Perfil</button></a>
-            <a href="{{route('home')}}"><button class="bg-sky-500 hover:bg-sky-600 text-white rounded-md px-4 py-2 transition-transform duration-300 transform hover:scale-105">Dashboard</button></a>
-            <form action="{{route('logout')}}" method="POST">
-                @csrf
-                <button type="submit" class="bg-sky-500 hover:bg-sky-600 text-white rounded-md px-4 py-2 transition-transform duration-300 transform hover:scale-105">
-                    Sair
-                </button>
-            </form>
-
-        </div>
-    </div>
-</nav>
+@include('pattern.navbar')
 
 <div class="bg-slate-100 text-justify p-7 m-6 shadow-xl rounded-lg  mx-auto w-screen">
     <div class="mb-6">
