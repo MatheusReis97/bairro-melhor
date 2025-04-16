@@ -29,7 +29,7 @@
 <br clear="both">
 
 - Laravel :  para o back-end, utilizando os recursos mais recentes como Eloquent ORM e Blade templates.<br><br>
--  MySQL : como banco de dados para armazenar as informações.<br><br>
+-  MySQL : como banco de dados para armazenar as informações. [ (Diagrama do banco) ](https://drive.google.com/file/d/1zI6zSZUPH-SQ6WjKRO6jQCxhR1DfXmA-/view?usp=sharing)  <br><br>
 - Docker e Docker Compose : para containerização e fácil configuração do ambiente.<br><br>
 - Tailwind CSS :  para a parte visual, criando uma interface moderna e responsiva.
 
